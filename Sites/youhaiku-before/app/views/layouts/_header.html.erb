@@ -1,0 +1,17 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Quien tiene razon?", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <% if current_user %>
+            Logged in as <strong><%= current_user.name %></strong>.
+            <%= link_to "Log Out", logout_path %>
+          <% else %>
+            <%= link_to "Sign Up", signup_path %> or
+            <%= link_to "Log In", login_path %>
+          <% end  %>
+        </ul>
+      </nav>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+<div class="haiku">
+  <%= simple_format haiku.content %>
+  <em>
+    -- <%= haiku.user.name %>
+    | <%= pluralize haiku.reputation_value_for(:votes).to_i, "vote" %>
+    | <%= link_to "Tiene razon", vote_haiku_path(haiku, type: "up"), method: "post" %>
+    | <%= link_to "Es un idiota!", vote_haiku_path(haiku, type: "down"), method: "post" %>
+    | <%= link_to "Opinar", haiku_path(haiku.id) %>
+  </em>
+</div>
